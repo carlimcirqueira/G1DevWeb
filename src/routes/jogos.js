@@ -6,15 +6,15 @@
 
 router.get('/', async (req,res) => {
     try{
-    db.all("SELECT * FROM produtoras",[],(rows) =>{res.json(rows);})}
+    db.all("SELECT * FROM jogos",[],(rows) =>{res.json(rows);})}
     catch(err){return res.status(500).json({error: 'Erro interno no servidor'})}
 }) 
 
 router.post('/',async (req,res)=>{
     try{
-        const { nome , cnpj, website} = req.body;
-        const sql = 'INSERT INTO produtoras (nome , cnpj, website) VALUES (?,?,?)';
-        db.run (sql,[nome,cnpj,website])
+        const { titulo , preco, id_produtora} = req.body;
+        const sql = 'INSERT INTO produtoras (titulo , preco, id_produtora) VALUES (?,?,?)';
+        db.run (sql,[titulo,preco,id_produtora])
         return res.status(201).json({ mensagem: 'produtora criada'})
     } 
     catch(err){
@@ -32,4 +32,10 @@ router.patch('/:id', async(req,res) =>{
 } catch(err){return res.status(400).json({ erro: "Erro ao atualizar"})}
 });
 
-router.get
+router.get('/:preco', async(req,res) =>{
+     try{
+    const sql = `SELECT * FROM jogos WHERE preco < ?`;
+    db.all(sql,[])    
+}
+    catch(err){return res.status(500).json({error: 'Erro interno no servidor'})}
+})
