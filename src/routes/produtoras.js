@@ -1,19 +1,6 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const db = require('./database')
+const express = requeire('express');
+const router = express();
 
 router.get('/', async (req,res) => {
     try{
@@ -33,4 +20,4 @@ router.post('/',async (req,res)=>{
     }
 })
 
-import(produtoras.js)
+module.exports(router)

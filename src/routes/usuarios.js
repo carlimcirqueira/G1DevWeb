@@ -1,7 +1,6 @@
-
-
-
-
+const db = require('./database')
+const express = requeire('express');
+const router = express();
 
 router.post('/',async (req,res)=>{
     try{
@@ -40,3 +39,5 @@ router.delete('/:id', (req,res) =>{
     } catch(err){ return res.status(500).json({ erro: err.message})}
     res.json({ mensagem: "usuario removido"});
 })
+
+module.exports(router)

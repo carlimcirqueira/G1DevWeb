@@ -39,4 +39,4 @@ db.serialize(() => {
 
 })
 
-import(Database.js)
+module.exports = db;

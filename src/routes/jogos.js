@@ -1,8 +1,6 @@
-
-
-
-
-
+const db = require('db');
+const express = requeire('express');
+const router = express();
 
 router.get('/', async (req,res) => {
     try{
@@ -39,3 +37,5 @@ router.get('/:preco', async(req,res) =>{
 }
     catch(err){return res.status(500).json({error: 'Erro interno no servidor'})}
 })
+
+module.exports(router)
