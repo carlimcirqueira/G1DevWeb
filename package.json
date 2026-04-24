@@ -12,6 +12,8 @@
   "type": "commonjs",
   "dependencies": {
     "better-sqlite3": "^12.9.0",
-    "Express": "^3.0.1"
+    "express": "npm:Express@^3.0.1",
+    "Express": "^3.0.1",
+    "node": "^24.15.0"
   }
 }
